@@ -1,0 +1,16 @@
+version: '3'
+services:
+  front:
+    build: ./front
+    container_name: front
+    volumes:
+      - ./front:/usr/src/app
+    ports:
+      - 3000:3000
+  backend:
+    build: ./backend
+    container_name: backend
+    volumes:
+      - ./backend:/usr/src/app
+    ports:
+      - 3001:3001
