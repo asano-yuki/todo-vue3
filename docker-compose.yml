@@ -1,9 +1,16 @@
 version: '3'
 services:
   front:
-    build: ./frontend
-    container_name: frontend
+    build: ./front
+    container_name: front
     volumes:
-      - ./frontend:/usr/src/app
+      - ./front:/usr/src/app
     ports:
       - 3000:3000
+  server:
+    build: ./server
+    container_name: server
+    volumes:
+      - ./server:/app
+    ports:
+      - 3001:3001
